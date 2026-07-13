@@ -1,0 +1,44 @@
+{
+  "questions": [
+    {
+      "id": "q001",
+      "category": "road_rules",
+      "question": "What does a red traffic light mean?",
+      "options": ["Stop", "Go", "Slow down", "Prepare to stop"],
+      "correctAnswer": 0,
+      "explanation": "A red traffic light means you must stop completely."
+    },
+    {
+      "id": "q002",
+      "category": "road_rules",
+      "question": "What is the maximum speed limit in a residential area?",
+      "options": ["30 km/h", "40 km/h", "50 km/h", "60 km/h"],
+      "correctAnswer": 2,
+      "explanation": "In South Africa, the default speed limit in residential areas is 50 km/h."
+    },
+    {
+      "id": "q003",
+      "category": "road_signs",
+      "question": "What does a circular red sign with a white horizontal bar indicate?",
+      "options": ["No entry", "Stop", "Speed limit", "No parking"],
+      "correctAnswer": 0,
+      "explanation": "A red circle with a white horizontal bar means 'No entry'."
+    },
+    {
+      "id": "q004",
+      "category": "vehicle_controls",
+      "question": "When should you check your rear-view mirror?",
+      "options": ["Only before braking", "Only when changing lanes", "Regularly and before any maneuver", "Never during turns"],
+      "correctAnswer": 2,
+      "explanation": "You should scan mirrors regularly and always before changing speed or direction."
+    },
+    {
+      "id": "q005",
+      "category": "road_signs",
+      "question": "What does a triangular red-bordered sign usually indicate?",
+      "options": ["Compulsory instruction", "Warning", "Information", "Parking zone"],
+      "correctAnswer": 1,
+      "explanation": "Triangular red-bordered signs are warning signs."
+    }
+  ]
+}

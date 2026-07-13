@@ -1,0 +1,11 @@
+{
+  "signs": [
+    {
+      "id": "s001",
+      "name": "Stop Sign",
+      "description": "Come to a complete stop",
+      "category": "regulatory",
+      "imageUrl": "stop-sign.png"
+    }
+  ]
+}

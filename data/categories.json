@@ -1,0 +1,7 @@
+{
+  "categories": [
+    { "id": "road_rules", "name": "Rules of the Road", "icon": "🚦", "questionCount": 100 },
+    { "id": "road_signs", "name": "Road Signs", "icon": "🛑", "questionCount": 80 },
+    { "id": "vehicle_controls", "name": "Vehicle Controls", "icon": "🚗", "questionCount": 75 }
+  ]
+}
