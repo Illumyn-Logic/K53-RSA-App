@@ -18,19 +18,19 @@
     },
     {
       "id": "q003",
+      "category": "road_rules",
+      "question": "When should you keep at least a 2-second following distance?",
+      "options": ["Only in rain", "For light motor vehicles and motorcycles in normal conditions", "Only at night", "Only on freeways"],
+      "correctAnswer": 1,
+      "explanation": "A safe following distance is essential and should be increased in poor conditions."
+    },
+    {
+      "id": "q004",
       "category": "road_signs",
       "question": "What does a circular red sign with a white horizontal bar indicate?",
       "options": ["No entry", "Stop", "Speed limit", "No parking"],
       "correctAnswer": 0,
       "explanation": "A red circle with a white horizontal bar means 'No entry'."
-    },
-    {
-      "id": "q004",
-      "category": "vehicle_controls",
-      "question": "When should you check your rear-view mirror?",
-      "options": ["Only before braking", "Only when changing lanes", "Regularly and before any maneuver", "Never during turns"],
-      "correctAnswer": 2,
-      "explanation": "You should scan mirrors regularly and always before changing speed or direction."
     },
     {
       "id": "q005",
@@ -39,6 +39,30 @@
       "options": ["Compulsory instruction", "Warning", "Information", "Parking zone"],
       "correctAnswer": 1,
       "explanation": "Triangular red-bordered signs are warning signs."
+    },
+    {
+      "id": "q006",
+      "category": "road_signs",
+      "question": "What should you do when you see a stop sign?",
+      "options": ["Slow down and continue", "Stop behind the line if there is one", "Only stop if another car is coming", "Ignore it if the road is clear"],
+      "correctAnswer": 1,
+      "explanation": "A stop sign requires a complete stop behind the stop line unless otherwise directed by a traffic officer."
+    },
+    {
+      "id": "q007",
+      "category": "vehicle_controls",
+      "question": "When should you check your rear-view mirror?",
+      "options": ["Only before braking", "Only when changing lanes", "Regularly and before any maneuver", "Never during turns"],
+      "correctAnswer": 2,
+      "explanation": "You should scan mirrors regularly and always before changing speed or direction."
+    },
+    {
+      "id": "q008",
+      "category": "vehicle_controls",
+      "question": "When must you use your direction indicators?",
+      "options": ["Only at night", "Only on freeways", "When turning left or right and when changing lanes", "Only when another vehicle is behind you"],
+      "correctAnswer": 2,
+      "explanation": "Indicators must be used whenever you change direction or lane."
     }
   ]
 }

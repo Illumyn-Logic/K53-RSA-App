@@ -9,8 +9,8 @@ import type { Question } from '@/store/useAppStore';
 
 export default function TestScreen() {
   const router = useRouter();
-  const params = useLocalSearchParams<{ id: string; category?: string; questionCount?: string }>();
-  const { startTest, answerQuestion, submitTest, currentTest } = useAppStore();
+  const params = useLocalSearchParams<{ id: string; category?: string; questionCount?: string; vehicleType?: 'code8' | 'code10' | 'code1' }>();
+  const { startTest, answerQuestion, submitTest, currentTest, setVehicleType } = useAppStore();
 
   const [questions, setQuestions] = useState<Question[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -21,10 +21,15 @@ export default function TestScreen() {
   useEffect(() => {
     const category = params.category ?? 'road_rules';
     const count = Number.parseInt(params.questionCount ?? '20', 10);
+
+    if (params.vehicleType) {
+      setVehicleType(params.vehicleType);
+    }
+
     const selectedQuestions = getQuestions(category, count);
     setQuestions(selectedQuestions);
     startTest(category, selectedQuestions);
-  }, [params.category, params.questionCount, startTest]);
+  }, [params.category, params.questionCount, params.vehicleType, setVehicleType, startTest]);
 
   useEffect(() => {
     const timer = setInterval(() => {

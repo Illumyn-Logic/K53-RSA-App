@@ -1,0 +1,37 @@
+{
+  "resources": [
+    {
+      "id": "rules-of-the-road",
+      "title": "Rules of the Road",
+      "summary": "Core duties, right-of-way, following distance, overtaking, parking and freeway rules.",
+      "highlights": [
+        "Pedestrians must be given priority at crossings.",
+        "Keep a safe following distance and do not tailgate.",
+        "Overtaking must be done only when it is safe and legal."
+      ],
+      "source": "docs/Downloads/Manuals/1_Rules_of_the_Road_v100_Jun_2012.md"
+    },
+    {
+      "id": "road-traffic-signs",
+      "title": "Road Traffic Signs",
+      "summary": "A practical guide to regulatory, warning, guidance and temporary sign meanings.",
+      "highlights": [
+        "Regulatory signs control behaviour and may be compulsory or prohibitive.",
+        "Warning signs alert you to hazards ahead.",
+        "Temporary signs are used at road works, crashes and school zones."
+      ],
+      "source": "docs/Downloads/Manuals/2_Manual_on_Road_Traffic_Signs_v100_Jun_2012.md"
+    },
+    {
+      "id": "vehicle-controls",
+      "title": "Vehicle Controls",
+      "summary": "Vehicle control principles, mirrors, indicators, braking and safe movement basics.",
+      "highlights": [
+        "Use indicators before changing direction or lane.",
+        "Check mirrors regularly and before any manoeuvre.",
+        "Always keep full control of the vehicle and your line of sight."
+      ],
+      "source": "docs/Downloads/Manuals/3_Vehicle_Controls_Manual_v100_Jun_2012.pdf"
+    }
+  ]
+}

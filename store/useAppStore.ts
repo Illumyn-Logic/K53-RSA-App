@@ -24,6 +24,13 @@ export type TestResult = {
   weakAreas?: string[];
 };
 
+export type GamificationState = {
+  xp: number;
+  streak: number;
+  badges: string[];
+  lastActiveDate: string | null;
+};
+
 type CurrentTest = {
   questions: Question[];
   answers: Array<number | null>;
@@ -35,6 +42,7 @@ type AppState = {
   selectedVehicleType: VehicleType;
   testHistory: TestResult[];
   currentTest: CurrentTest | null;
+  gamification: GamificationState;
 
   setOnboardingCompleted: (completed: boolean) => void;
   setVehicleType: (type: VehicleType) => void;
@@ -42,6 +50,8 @@ type AppState = {
   answerQuestion: (questionIndex: number, answerIndex: number) => void;
   submitTest: () => TestResult;
   clearHistory: () => void;
+  addXp: (amount: number) => void;
+  completeDailyCheckIn: () => void;
 };
 
 export const useAppStore = create<AppState>()(
@@ -51,6 +61,12 @@ export const useAppStore = create<AppState>()(
       selectedVehicleType: 'code8',
       testHistory: [],
       currentTest: null,
+      gamification: {
+        xp: 0,
+        streak: 0,
+        badges: [],
+        lastActiveDate: null,
+      },
 
       setOnboardingCompleted: (completed) => set({ onboardingCompleted: completed }),
 
@@ -82,7 +98,7 @@ export const useAppStore = create<AppState>()(
       },
 
       submitTest: () => {
-        const { currentTest, selectedVehicleType, testHistory } = get();
+        const { currentTest, selectedVehicleType, testHistory, addXp } = get();
         if (!currentTest) throw new Error('No active test');
 
         const { questions, answers, category } = currentTest;
@@ -114,13 +130,59 @@ export const useAppStore = create<AppState>()(
           weakAreas,
         };
 
-        set({
-          testHistory: [result, ...testHistory],
+        const xpGain = score >= 80 ? 60 : 30;
+        addXp(xpGain);
+
+        set((state) => ({
+          testHistory: [result, ...state.testHistory],
           currentTest: null,
-        });
+        }));
 
         return result;
       },
+
+      addXp: (amount) =>
+        set((state) => ({
+          gamification: {
+            ...state.gamification,
+            xp: state.gamification.xp + amount,
+          },
+        })),
+
+      completeDailyCheckIn: () =>
+        set((state) => {
+          const today = new Date().toISOString().slice(0, 10);
+          const lastActive = state.gamification.lastActiveDate;
+          const currentStreak = state.gamification.streak;
+
+          let nextStreak = 1;
+          if (lastActive) {
+            const lastDate = new Date(lastActive);
+            const lastDateKey = lastDate.toISOString().slice(0, 10);
+            const diffDays = Math.floor((new Date(today).getTime() - new Date(lastDateKey).getTime()) / 86400000);
+
+            if (diffDays === 0) {
+              return state;
+            }
+
+            nextStreak = diffDays === 1 ? currentStreak + 1 : 1;
+          }
+
+          const xpGain = 25;
+          const badges = [...state.gamification.badges];
+          if (nextStreak >= 3 && !badges.includes('Streak 3')) badges.push('Streak 3');
+          if (nextStreak >= 7 && !badges.includes('Road Legend')) badges.push('Road Legend');
+
+          return {
+            gamification: {
+              ...state.gamification,
+              xp: state.gamification.xp + xpGain,
+              streak: nextStreak,
+              badges,
+              lastActiveDate: today,
+            },
+          };
+        }),
 
       clearHistory: () => set({ testHistory: [] }),
     }),
@@ -131,6 +193,7 @@ export const useAppStore = create<AppState>()(
         onboardingCompleted: state.onboardingCompleted,
         selectedVehicleType: state.selectedVehicleType,
         testHistory: state.testHistory,
+        gamification: state.gamification,
       }),
     }
   )

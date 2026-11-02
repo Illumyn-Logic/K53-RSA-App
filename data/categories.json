@@ -1,7 +1,25 @@
 {
   "categories": [
-    { "id": "road_rules", "name": "Rules of the Road", "icon": "🚦", "questionCount": 100 },
-    { "id": "road_signs", "name": "Road Signs", "icon": "🛑", "questionCount": 80 },
-    { "id": "vehicle_controls", "name": "Vehicle Controls", "icon": "🚗", "questionCount": 75 }
+    {
+      "id": "road_rules",
+      "name": "Rules of the Road",
+      "icon": "🚦",
+      "questionCount": 100,
+      "description": "Right-of-way, following distance, lanes, overtaking, parking and freeway behaviour."
+    },
+    {
+      "id": "road_signs",
+      "name": "Road Signs",
+      "icon": "🛑",
+      "questionCount": 80,
+      "description": "Regulatory, warning, guidance, information and temporary signs."
+    },
+    {
+      "id": "vehicle_controls",
+      "name": "Vehicle Controls",
+      "icon": "🚗",
+      "questionCount": 75,
+      "description": "Mirror checks, indicators, steering, braking and safe vehicle movement."
+    }
   ]
 }

@@ -1,0 +1,61 @@
+{
+  "whyItMatters": {
+    "title": "Why you need a learner's licence",
+    "description": "A learner's licence confirms that you understand the road rules, signs and basic vehicle control before driving on public roads.",
+    "validity": "Valid for 24 months and cannot be extended."
+  },
+  "categories": [
+    {
+      "id": "code1",
+      "label": "Code 1",
+      "display": "Motorcycle / Code 1",
+      "officialEquivalent": "Code 1",
+      "vehicleType": "Motorcycle, tricycle, quadrucycle",
+      "ageRequirement": "16+ for motorcycles up to 125 cc, 18+ for above 125 cc"
+    },
+    {
+      "id": "code8",
+      "label": "Code 8",
+      "display": "Light Motor Vehicle / Code 8",
+      "officialEquivalent": "Code 2",
+      "vehicleType": "Light motor vehicle up to 3,500 kg",
+      "ageRequirement": "17+"
+    },
+    {
+      "id": "code10",
+      "label": "Code 10",
+      "display": "Heavy Motor Vehicle / Code 10",
+      "officialEquivalent": "Code 3",
+      "vehicleType": "Heavy motor vehicle above 3,500 kg",
+      "ageRequirement": "18+"
+    }
+  ],
+  "requiredDocuments": [
+    "Identity document",
+    "Proof of postal and residential address",
+    "Booking/application fee",
+    "Photos (if requested by the DLTC)",
+    "Affidavit if utility bill is not in your name",
+    "Ward councillor letter for informal settlement address (where applicable)"
+  ],
+  "formsAndChecks": [
+    "Complete the LL1 learner's licence application form",
+    "Medical certificate (MC) if 65 years or older",
+    "Eye test at a DLTC or qualified optometrist"
+  ],
+  "testDayChecklist": [
+    "Booking receipt",
+    "Identity document",
+    "Pen and pencil",
+    "Arrive early and follow examiner instructions"
+  ],
+  "studyAreas": [
+    "Rules of the Road",
+    "Road Traffic Signs and Markings",
+    "Vehicle Controls / Motorcycle Controls"
+  ],
+  "applicationChannels": [
+    "Book online via NATIS where available",
+    "Apply at your nearest DLTC"
+  ]
+}

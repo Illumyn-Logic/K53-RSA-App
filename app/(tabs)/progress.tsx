@@ -5,6 +5,7 @@ import { ProgressBar } from '@/components/ui/ProgressBar';
 
 export default function ProgressScreen() {
   const testHistory = useAppStore((state) => state.testHistory);
+  const gamification = useAppStore((state) => state.gamification);
 
   const totalTests = testHistory.length;
   const averageScore = totalTests > 0 ? Math.round(testHistory.reduce((sum, t) => sum + t.score, 0) / totalTests) : 0;
@@ -26,6 +27,17 @@ export default function ProgressScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>📊 Progress</Text>
+
+      <Card style={styles.heroCard}>
+        <Text style={styles.heroTitle}>Level Up</Text>
+        <Text style={styles.heroValue}>{gamification.xp} XP</Text>
+        <Text style={styles.heroText}>Current streak: {gamification.streak} days</Text>
+        {gamification.badges.length > 0 ? (
+          <Text style={styles.heroText}>Badges: {gamification.badges.join(', ')}</Text>
+        ) : (
+          <Text style={styles.heroText}>Keep practicing to unlock badges.</Text>
+        )}
+      </Card>
 
       <View style={styles.statsRow}>
         <Card style={styles.statCard}>
@@ -82,6 +94,10 @@ export default function ProgressScreen() {
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#f5f5f5', padding: 20 },
   title: { fontSize: 28, fontWeight: 'bold', marginBottom: 16 },
+  heroCard: { marginBottom: 16, backgroundColor: '#fef3c7' },
+  heroTitle: { fontSize: 14, fontWeight: '700', color: '#92400e' },
+  heroValue: { fontSize: 24, fontWeight: '800', marginTop: 4 },
+  heroText: { fontSize: 13, color: '#444', marginTop: 4 },
   statsRow: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 20 },
   statCard: { flex: 1, marginHorizontal: 4, alignItems: 'center', padding: 12 },
   statNumber: { fontSize: 22, fontWeight: 'bold' },

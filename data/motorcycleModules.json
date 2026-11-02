@@ -1,0 +1,95 @@
+{
+  "modules": [
+    {
+      "id": "pretrip",
+      "title": "Pre-trip Inspection",
+      "category": "pretrip",
+      "description": "Inspect the motorcycle before riding and confirm it is roadworthy.",
+      "xp": 100,
+      "difficulty": "beginner",
+      "steps": [
+        "Check for leaks, damage and obvious defects.",
+        "Inspect the wheels, tyres and controls.",
+        "Confirm lights, indicators, horn and brakes are working."
+      ]
+    },
+    {
+      "id": "starting",
+      "title": "Starting Procedure",
+      "category": "starting",
+      "description": "Mount, start and prepare the motorcycle safely.",
+      "xp": 120,
+      "difficulty": "beginner",
+      "steps": [
+        "Mount the motorcycle correctly.",
+        "Start the engine only once the bike is ready.",
+        "Operate lights, indicators and horn as required."
+      ]
+    },
+    {
+      "id": "lane-change",
+      "title": "Lane Change",
+      "category": "manoeuvre",
+      "description": "Change lanes safely while checking mirrors and blind spots.",
+      "xp": 140,
+      "difficulty": "intermediate",
+      "steps": [
+        "Check mirrors and blind spots.",
+        "Signal your intention.",
+        "Steer safely into the selected lane and cancel the signal."
+      ]
+    },
+    {
+      "id": "turning-left",
+      "title": "Turning Left",
+      "category": "manoeuvre",
+      "description": "Perform a left turn while observing road users and markings.",
+      "xp": 150,
+      "difficulty": "intermediate",
+      "steps": [
+        "Check mirrors and blind spot to the left.",
+        "Signal and position correctly.",
+        "Yield to pedestrians and other traffic if required."
+      ]
+    },
+    {
+      "id": "turning-right",
+      "title": "Turning Right",
+      "category": "manoeuvre",
+      "description": "Handle right turns with safe observation and positioning.",
+      "xp": 150,
+      "difficulty": "intermediate",
+      "steps": [
+        "Check mirrors and blind spot to the right.",
+        "Signal early and position safely.",
+        "Yield to approaching traffic and pedestrians."
+      ]
+    },
+    {
+      "id": "traffic-signals",
+      "title": "Traffic Signals",
+      "category": "rules",
+      "description": "Respond correctly to traffic signals and officer directions.",
+      "xp": 130,
+      "difficulty": "beginner",
+      "steps": [
+        "Observe the signal and surrounding traffic.",
+        "Stop or proceed only when it is safe.",
+        "Treat officer directions as legal instructions."
+      ]
+    },
+    {
+      "id": "emergency-stop",
+      "title": "Emergency Stop",
+      "category": "manoeuvre",
+      "description": "Stop as quickly and safely as possible under pressure.",
+      "xp": 180,
+      "difficulty": "advanced",
+      "steps": [
+        "Maintain control and keep your eyes ahead.",
+        "Brake smoothly and progressively.",
+        "Stop within the required area without losing balance."
+      ]
+    }
+  ]
+}

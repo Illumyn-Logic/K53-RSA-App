@@ -4,6 +4,8 @@ import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 
 type ParsedResult = {
+  category?: string;
+  vehicleType?: 'code8' | 'code10' | 'code1';
   score: number;
   correctAnswers: number;
   totalQuestions: number;
@@ -14,7 +16,14 @@ export default function ResultsScreen() {
   const router = useRouter();
   const params = useLocalSearchParams<{ result?: string }>();
 
-  const parsedResult: ParsedResult | null = params.result ? JSON.parse(params.result) : null;
+  let parsedResult: ParsedResult | null = null;
+  if (params.result) {
+    try {
+      parsedResult = JSON.parse(params.result) as ParsedResult;
+    } catch {
+      parsedResult = null;
+    }
+  }
 
   if (!parsedResult) {
     return <Text>No result data</Text>;
@@ -22,6 +31,20 @@ export default function ResultsScreen() {
 
   const pass = parsedResult.score >= 80;
   const wrong = parsedResult.totalQuestions - parsedResult.correctAnswers;
+  const categoryToReview = parsedResult.weakAreas?.[0] ?? parsedResult.category;
+
+  const handleRetry = () => {
+    const category = parsedResult.category ?? 'road_rules';
+    router.push({
+      pathname: '/test/[id]',
+      params: {
+        id: 'retry',
+        category,
+        questionCount: String(parsedResult.totalQuestions),
+        vehicleType: parsedResult.vehicleType ?? 'code8',
+      },
+    });
+  };
 
   return (
     <ScrollView style={styles.container} contentContainerStyle={{ padding: 20 }}>
@@ -58,8 +81,18 @@ export default function ResultsScreen() {
       )}
 
       <View style={styles.buttonRow}>
-        <Button title="Review Answers" onPress={() => {}} variant="outline" style={styles.actionButton} />
-        <Button title="Retry" onPress={() => router.back()} style={styles.actionButton} />
+        <Button
+          title={parsedResult.weakAreas?.length ? 'Study Weak Area' : 'Review Topic Notes'}
+          onPress={() =>
+            router.push({
+              pathname: '/study/[id]',
+              params: { id: categoryToReview ?? 'road_rules' },
+            })
+          }
+          variant="outline"
+          style={styles.actionButton}
+        />
+        <Button title="Retry" onPress={handleRetry} style={styles.actionButton} />
         <Button title="Home" onPress={() => router.push('/(tabs)/home')} style={styles.actionButton} variant="outline" />
       </View>
     </ScrollView>

@@ -1,0 +1,67 @@
+{
+  "topicGroups": [
+    {
+      "id": "core-road-behaviour",
+      "title": "Core Road Behaviour",
+      "topics": [
+        "General duties of driver/rider",
+        "Pedestrian right of way",
+        "Crossing or entering a public road",
+        "Driving on left side of roadway",
+        "Lane changing",
+        "Overtaking and passing",
+        "Intersections",
+        "Roundabouts and mini-traffic circles",
+        "Freeways"
+      ]
+    },
+    {
+      "id": "speed-parking-and-stopping",
+      "title": "Speed, Parking and Stopping",
+      "topics": [
+        "Speed limits",
+        "Parking",
+        "Stopping",
+        "Compulsory stops",
+        "Following distance"
+      ]
+    },
+    {
+      "id": "vehicle-safety-and-equipment",
+      "title": "Vehicle Safety and Equipment",
+      "topics": [
+        "Lights (main beam, dipped beam, rear/stop/fog lamps)",
+        "Number plates",
+        "Rear-view mirrors and visibility",
+        "Steering gear",
+        "Brakes and tyres",
+        "Seatbelts and child safety",
+        "Protective motorcycle helmets",
+        "Emergency warning triangles",
+        "Retro-reflectors and reflective material"
+      ]
+    },
+    {
+      "id": "vehicle-load-and-roadworthiness",
+      "title": "Load, Towing and Roadworthiness",
+      "topics": [
+        "Vehicle dimensions (length, height, width)",
+        "Conveyance of goods and overhang/projections",
+        "Carrying persons on goods vehicles",
+        "Towing and combinations of vehicles",
+        "Sidecar attachment for motorcycles"
+      ]
+    },
+    {
+      "id": "legal-and-risk",
+      "title": "Legal and Risk Behaviour",
+      "topics": [
+        "Cell phone use",
+        "Reckless/negligent/inconsiderate driving",
+        "Alcohol and drugs",
+        "Excessive noise",
+        "Abandoned vehicles and damage to roads"
+      ]
+    }
+  ]
+}
